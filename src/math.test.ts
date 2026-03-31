@@ -95,6 +95,4 @@ describe('quadratic', () => {
   it('returns null when the discriminant is negative', () => {
     expect(quadratic(1, 0, 1)).toBeNull();
   });
-
-  
 });

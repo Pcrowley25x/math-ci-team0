@@ -54,7 +54,11 @@ export function clamp(value: number, min: number, max: number): number | null {
   return value;
 }
 
-export function quadratic(a: number, b: number, c: number): Array<number> | null {
+export function quadratic(
+  a: number,
+  b: number,
+  c: number,
+): Array<number> | null {
   if (a === 0) {
     return null;
   }
@@ -76,5 +80,4 @@ export function quadratic(a: number, b: number, c: number): Array<number> | null
   const root2 = (-b + squareRoot) / denominator;
 
   return [root1, root2];
-  
 }
