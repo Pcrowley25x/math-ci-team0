@@ -84,7 +84,7 @@ describe('clamp', () => {
 });
 
 describe('quadratic', () => {
-  it('returns two real roots when the discriminant is positive', () => {
+  it('returns two roots when the discriminant is positive', () => {
     expect(quadratic(1, -3, 2)).toEqual([1, 2]);
   });
 
@@ -95,4 +95,6 @@ describe('quadratic', () => {
   it('returns null when the discriminant is negative', () => {
     expect(quadratic(1, 0, 1)).toBeNull();
   });
+
+  
 });
