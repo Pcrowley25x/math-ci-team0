@@ -53,3 +53,28 @@ export function clamp(value: number, min: number, max: number): number | null {
   }
   return value;
 }
+
+export function quadratic(a: number, b: number, c: number): Array<number> | null {
+  if (a === 0) {
+    return null;
+  }
+
+  const discriminant = b ** 2 - 4 * a * c;
+
+  if (discriminant < 0) {
+    return null;
+  }
+
+  const denominator = 2 * a;
+
+  if (discriminant === 0) {
+    return [-b / denominator];
+  }
+
+  const squareRoot = Math.sqrt(discriminant);
+  const root1 = (-b - squareRoot) / denominator;
+  const root2 = (-b + squareRoot) / denominator;
+
+  return [root1, root2];
+  
+}

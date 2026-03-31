@@ -8,6 +8,7 @@ import {
   power,
   average,
   clamp,
+  quadratic,
 } from './math';
 
 describe('add', () => {
@@ -78,6 +79,20 @@ describe('clamp', () => {
     expect(clamp(5, 1, 10)).toBe(5);
   });
   it('return 5 when your value, min and max are 5, 1, 10', () => {
-    expect(clamp(5, 1, 10)).toBe(5);
+    expect(clamp(-3, 0, 100)).toBe(0);
+  });
+});
+
+describe('quadratic', () => {
+  it('returns two real roots when the discriminant is positive', () => {
+    expect(quadratic(1, -3, 2)).toEqual([1, 2]);
+  });
+
+  it('returns one real root when the discriminant is zero', () => {
+    expect(quadratic(1, -2, 1)).toEqual([1]);
+  });
+
+  it('returns null when the discriminant is negative', () => {
+    expect(quadratic(1, 0, 1)).toBeNull();
   });
 });
